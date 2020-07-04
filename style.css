@@ -1,0 +1,400 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Sans-serif;
+}
+#map {
+  position: absolute;
+  background-color: grey;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+}
+h1 {
+  color: white;
+  font-size: 20px;
+  line-height: 30px;
+}
+h2 {
+  color: white;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+h3{
+  color: white;
+  font-size: 20px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+a {
+  text-decoration: none;
+  color: #2dc4b2;
+}
+p{
+  color: white;
+}
+label{
+  color: white;
+}
+
+#console {
+  height: 70%;
+  width: 20%;
+  top:0px;
+  left:3px;
+  margin: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  position: fixed;
+  background: rgba(0,0,0,0.73);
+  font-family: Arial, sans-serif;
+  border-radius: 5px;
+  border: 2px solid silver;
+  overflow-y: scroll;
+  z-index: 1;
+}
+.session {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.row {
+  height: 12px;
+  width: 100%;
+  color: white;
+}
+
+.colors {
+  background: linear-gradient(to right, #d53e4f, #fc8d59, #fee08b, #e6f598, #99d594, #3288bd);
+  margin-bottom: 5px;
+}
+
+.label {
+  width: 15%;
+  display: inline-block;
+  text-align: center;
+  z-index: 3;
+}
+#weekDayChart{
+  height: 26%;
+  width: 20%;
+  bottom: 0px;
+  left: calc(20vw + 53px);
+
+  margin: 0px;
+  padding: 5px 20px;
+  padding-top: 0px;
+  position: fixed;
+  background: rgba(0,0,0,0.73);
+
+  font-family: Arial, sans-serif;
+  border-radius: 5px;
+  border: 2px solid silver;
+  z-index: 1;
+}
+#monthChart{
+  height: 26%;
+  width: 20%;
+  bottom: 0px;
+  left: 3px;
+
+  margin: 0px;
+  padding: 5px 20px;
+  padding-top: 0px;
+  position: fixed;
+  background: rgba(0,0,0,0.73);
+
+  font-family: Arial, sans-serif;
+  border-radius: 5px;
+  border: 2px solid silver;
+  z-index: 1;
+
+}
+#hourChart{
+  height: 26% ;
+  width: 55%;
+  bottom: 0px;
+  left: calc(40vw + 103px);
+
+  margin: 0px;
+  padding: 5px 20px;
+  padding-top: 0px;
+  position: fixed;
+  background: rgba(0,0,0,0.73);
+
+  font-family: Arial, sans-serif;
+  border-radius: 5px;
+  border: 2px solid silver;
+  z-index: 1;
+}
+
+/*==========This is for the interactive buttons*/
+#menu{
+  text-decoration: none;
+  list-style: none;
+  font-family: "Open Sans",sans-serif;
+  display: flex;
+  height: 40px;
+  align-items: right;
+  justify-content: right;
+  text-align: right;
+
+  border-color: white;
+  border-width: 2px;
+  width: 20vw;
+  padding-left: 0px;
+  padding-right: 20px;
+  padding-top: 00px;
+  padding-bottom: 0px;
+  z-index:0
+}
+.menu a{
+  display: inline-block;
+  margin-right: 8px;
+  margin-left: 0px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #f1f1f1;
+  text-transform: uppercase;
+
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s linear;
+  position: relative;
+  z-index: 1
+}
+
+.menu a:hover{
+  color: #111;
+}
+
+.menu a::before,
+.menu a::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  left: 0;
+  box-sizing: border-box;
+  z-index: -1;
+}
+
+.menu a::before{
+  bottom: 0;
+  border-left: 1px solid #99ccff;
+  border-right: 1px solid #99ccff;
+  transition: .3s linear;
+}
+
+.menu a::after{
+  top: 0;
+  background-color: #99ccff;
+  transition: .3s linear .3s;
+}
+
+.menu a:hover::before,
+.menu a:hover::after{
+  height: 100%;
+}
+#slider{
+
+}
+/*==========================Days Button ====================*/
+/* body */
+
+.dark {
+  --primary: hsl(1, 100%, 68%);
+  --other: hsl(0, 0%, 90%);
+}
+
+
+h4 {
+  color: var(--other);
+  padding: 8px 4px;
+  border-bottom: 2px solid var(--other);
+}
+
+
+/* label */
+label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 12px 0;
+  cursor: pointer;
+  position: relative;
+
+}
+
+
+/* input */
+input {
+  opacity: 0;
+
+  z-index: -1;
+}
+
+
+/* .design */
+.design {
+  width: 16px;
+  height: 16px;
+
+  border: 1px solid var(--other);
+  border-radius: 100%;
+  margin-right: 16px;
+
+  position: relative;
+}
+
+.design::before,
+.design::after {
+  content: "";
+  display: block;
+
+  width: inherit;
+  height: inherit;
+
+  border-radius: inherit;
+
+  position: absolute;
+  transform: scale(0);
+  transform-origin: center center;
+}
+
+.design:before {
+  background: var(--other);
+  opacity: 0;
+  transition: .3s;
+}
+
+.design::after {
+  background: var(--primary);
+  opacity: .4;
+  transition: .6s;
+}
+
+
+/* .text */
+.text {
+  color: var(--other);
+  font-weight: bold;
+}
+
+
+/* checked state */
+input:checked+.design::before {
+  opacity: 1;
+
+  transform: scale(.6);
+}
+
+
+/* other states */
+input:hover+.design,
+input:focus+.design {
+  border: 1px solid var(--primary);
+}
+
+input:hover+.design:before,
+input:focus+.design:before {
+  background: var(--primary);
+}
+
+input:hover~.text {
+  color: var(--primary);
+}
+
+input:focus+.design::after,
+input:active+.design::after {
+  opacity: .1;
+  transform: scale(2.6);
+}
+
+.abs-site-link {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: hsla(0, 0%, 0%, .6);
+  background: hsla(0, 0%, 98%, .6);
+  font-size: 16px;
+}
+
+/*Slider Bar*/
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+/*This is the sliding circle/whatever shape it is*/
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: red;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+/*=======Hover effects ========*/
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}

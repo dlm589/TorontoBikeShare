@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>Bikeshare Toronto 2018 Usage</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+  <link rel = "stylesheet" href = "./style.css">
+  <div id='map'></div>
+</head>
+<body>
+
+  <div id='console'>
+      <h1>Bikeshare Toronto 2018 Usage</h1>
+      <p> Data: <a href='https://open.toronto.ca/dataset/bike-share-toronto-ridership-data/'>Bike Share Toronto Ridership Data</a> Toronto, 2018</p>
+      <div class='session'>
+      <h2>Trip Count</h2>
+      <div class='row colors'></div>
+      <div class='row labels'>
+        <div class='label'>0</div>
+        <div class='label'>5</div>
+        <div class='label'>10</div>
+        <div class='label'>50</div>
+        <div class='label'>100</div>
+        <div class='label'>500+</div>
+      </div>
+      </div>
+      <div class='session' id='sliderbar'>
+
+
+    </div>
+
+    <div class='session' id = 'sliderbar'>
+      <h2><label id='active-hour'>12:00 AM</label></h2>
+      <input id = slider class="slider" type="range" min="1" max="23" value="1" >
+    </div>
+
+<section class="dark" id = "filters">
+
+  <h4>Day of Week</h4>
+
+  <label>
+    <input id = 'Monday' type="radio" name="dark" value='Monday' checked='checked'>
+    <span class="design"></span>
+    <span class="text">Monday</span>
+  </label>
+
+  <label>
+    <input id='Tuesday' type="radio" name="dark" value='Tuesday'>
+    <span class="design"></span>
+    <span class="text">Tuesday</span>
+  </label>
+
+  <label>
+    <input id='Wednesday' type="radio" name="dark" value='Wednesday'>
+    <span class="design"></span>
+    <span class="text">Wednesday</span>
+  </label>
+
+  <label>
+    <input id='Thursday' type="radio" name="dark" value='Thursday' >
+    <span class="design"></span>
+    <span class="text">Thurdsday</span>
+  </label>
+
+  <label>
+    <input id='Friday' type="radio" name="dark" value='Friday'>
+    <span class="design"></span>
+    <span class="text">Friday</span>
+  </label>
+
+  <label>
+    <input id='Saturday' type="radio" name="dark" value='Saturday'>
+    <span class="design"></span>
+    <span class="text">Saturday</span>
+  </label>
+
+  <label>
+    <input id='Sunday' type="radio" name="dark" value='Sunday'>
+    <span class="design"></span>
+    <span class="text">Sunday</span>
+  </label>
+
+</section>
+
+</div>
+<div id = "weekDayChart">
+    <h3>Total Trips For Each Week Day</h3>
+</div>
+<div id = "monthChart">
+    <h3>Total Trips For Each Month</h3>
+</div>
+
+  <div id = "hourChart">
+      <h3>Total Trips For Each Hour</h3>
+  </div>
+  <div class = "map"></div>
+  <script src = "./TorontoBikeShare2018.js"></script>
+</body>
+</html>
