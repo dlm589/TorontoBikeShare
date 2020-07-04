@@ -107,8 +107,7 @@ map.on("click", "bike", function(e){
                         "<hr> " +
                         "<b>Station ID: </b> " + feature.properties.StationDat + "<br>"+
                         "<b>Capacity: </b> " + feature.properties.StationD_4 + "<br>" + //this is station capacity
-                        "<b>Day: </b> " + feature.properties.BikeTrip_2 + " (whole year) <br>" +
-                        "<b>Ride Count: </b> " + feature.properties.BikeTrip_5);
+                        "<b>Day: </b> " + feature.properties.BikeTrip_2 +"<br>"
           popup.addTo(map); //finally add the pop up to the map
       }
         d3.selectAll('svg').remove();
