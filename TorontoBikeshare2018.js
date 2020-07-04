@@ -131,7 +131,7 @@ map.on("click", "bike", function(e){
         async function getData(station)
         {
           var dataLists = [];
-          const response = await fetch('https://dlm589.github.io/WebMapping/StationTable.csv');
+          const response = await fetch('https://dlm589.github.io/TorontoBikeShare/.StationTable.csv');
           const data = await response.text(); //load the data as text
           const table = data.split('\n').slice(1); //makes each row as an element in the row list, header removed
           table.forEach(row =>{
