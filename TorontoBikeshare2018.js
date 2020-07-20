@@ -8,6 +8,7 @@ var map = new mapboxgl.Map({
   zoom: 11.5
 });
 
+
 map.on('load', function() {
       map.addSource("bikeUsage_source",{
         "type": 'vector',
